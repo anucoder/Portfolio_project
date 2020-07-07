@@ -2,8 +2,9 @@
 body {
   background: linear-gradient(90deg, #00adff 40%, white 90%);
   background-attachment: fixed;
- font-size: medium;
- font-family: Arial, Helvetica, sans-serif;
+  font-size: medium;
+  font-family: Arial, Helvetica, sans-serif;
+  box-sizing: border-box;
 }
 
 html, body {
@@ -13,6 +14,41 @@ html, body {
   padding : 0;
 }
 
+#header
+{
+  /* make the direction reverse and make the hover work */
+  /* background: transparent;  */
+  background: linear-gradient(270deg, #00adff 40%, white 90%);
+  padding : 30px;
+}
+
+.navbar {
+  display: flex;
+  height : 40px;
+  flex-flow: row wrap;
+  justify-content: center;
+  background-color:#85d6fb;
+  border-top : 4px solid white; 
+  border-bottom : 4px solid white; 
+}
+
+.navbar a{
+  text-decoration: none;
+  color:#06a3d2;
+  padding: 10px 75px;   
+}
+
+.navbar a:hover{
+background-color: white; 
+color: #00adff;
+}
+
+#footer{
+  background-color:white;
+  height: 100px;
+}
+
+
 section{
   position: relative;
   display: flex;
@@ -20,31 +56,25 @@ section{
   align-items: center; 
   height: 100vh;
 }
-section .front-box
+section .pocket
 {
-  position: relative;
+  position: absolute;
   border: 1px solid rgba(152, 201, 223, 0.493); 
   background-color: #00adff;
   max-width: 600px;
   padding: 50px;
   box-shadow: 0px -11px 12px 0px rgba(0,0,0,.5);
-  overflow: hidden;
-  z-index: 2;
-  /* filter:blur(5px); */
-  /* transform: translate(10px, 10px); */
-  /* background-attachment: fixed; */
+  
 }
 
-.paper {
-  left: 50px;
+  .paper {
   position: absolute;
-  height: 430px;
+  height: 410px;
   width: 480px;
+  bottom : 10px;
   background: rgba(255,255,255,0.9);
-  margin: -275px -225px;
-  left: 25%;
-  top: 50%;
   box-shadow: 0px 0px 5px 0px #888;
+  z-index:-2;
 }
 .paper::before {
   content: '';
@@ -62,7 +92,7 @@ section .front-box
 }
 .text {
   position: absolute;
-  top: 65px;
+  top: 40px;
   left: 55px;
   bottom: 10px;
   right: 10px;
@@ -70,22 +100,4 @@ section .front-box
   font-family: 'Indie Flower';
   overflow: hidden;
   outline: none;
-}
-.holes {
-  position: absolute;
-  left: 10px;
-  height: 25px;
-  width: 25px;
-  background: lightgoldenrodyellow;
-  border-radius: 50%;
-  box-shadow: inset 0px 0px 2px 0px #888;
-}
-.hole-top {
-  top: 10%;
-}
-.hole-middle {
-  top: 50%;
-}
-.hole-bottom {
-  bottom: 10%;
 }
